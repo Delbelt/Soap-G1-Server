@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://soap/filters"
+	xmlns="http://soap/filters" elementFormDefault="qualified">
+
+	<xs:element name="SaveFilterRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filter" type="FilterSoap" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SaveFilterResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filter" type="FilterSoap" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetFiltersByUserRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetFiltersByUserResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filters" type="FilterSoap" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteFilterRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="filterId" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteFilterResponse">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="FilterSoap">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="user" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="filters" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
