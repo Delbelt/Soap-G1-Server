@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://soap/filters"
+           targetNamespace="http://soap/filters"
+           elementFormDefault="qualified">
+
+    <xs:element name="getFiltersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getFiltersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="filters" type="tns:FilterSoap" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="FilterSoap">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="productCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="startRequestDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="endRequestDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="startReceiptDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="endReceiptDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+            <xs:element name="store" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
