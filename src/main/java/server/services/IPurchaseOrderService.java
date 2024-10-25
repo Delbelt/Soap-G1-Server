@@ -1,6 +1,7 @@
 package server.services;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import server.entities.PurchaseOrder;
@@ -26,4 +27,7 @@ public interface IPurchaseOrderService {
 	public boolean Update(PurchaseOrder order);
 
 	public boolean remove(int id);
+	
+	public List<PurchaseOrder> searchOrders(String productCode, LocalDateTime startRequestDate, LocalDateTime endRequestDate, String status, String storeId);
+    
 }

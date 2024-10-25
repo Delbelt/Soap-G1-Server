@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://soap/purchase_orders"
+           targetNamespace="http://soap/purchase_orders"
+           elementFormDefault="qualified">
+
+    <xs:element name="SearchPurchaseOrdersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="productCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="startRequestDate" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="endRequestDate" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="status" type="xs:string" minOccurs="0"/>
+                <xs:element name="storeCode" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SearchPurchaseOrdersResponse">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="purchaseOrders" type="tns:PurchaseOrderSoap" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+    <!-- Definición de PurchaseOrderSoap -->
+    <xs:complexType name="PurchaseOrderSoap">
+        <xs:sequence>
+            <xs:element name="idPurchaseOrder" type="xs:int"/>
+            <xs:element name="state" type="xs:string"/>
+            <xs:element name="observations" type="xs:string" minOccurs="0"/>
+            <xs:element name="requestDate" type="xs:dateTime"/>
+            <xs:element name="receiptDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="storeCode" type="xs:string"/>
+            <!-- Lista de OrderItem -->
+            <xs:element name="items" minOccurs="0" maxOccurs="unbounded" type="tns:OrderItemSoap"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definición de OrderItemSoap con code y quantity -->
+    <xs:complexType name="OrderItemSoap">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="quantity" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

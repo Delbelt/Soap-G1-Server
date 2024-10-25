@@ -8,5 +8,9 @@ public class RouterSoap {
 	
 	// GENERAL
 	public final static String URLMAPPINGS  = "/ws/*";
+	
+	// PURCHASE ORDER
+	public final static String NAMESPACE_PURCHASE_ORDER = "http://soap/purchase_orders";
+	public final static String RESOURCE_PURCHASE_ORDER = "xsd/purchase_orders.xsd";
 
 }
