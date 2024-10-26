@@ -129,6 +129,8 @@
 				<configuration>
 					<sources>
 						<source>src/main/resources/xsd/countries.xsd</source>
+						<source>src/main/resources/xsd/purchase_orders.xsd</source>
+						<source>src/main/resources/xsd/filters.xsd</source>
 					</sources>
 					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>				
