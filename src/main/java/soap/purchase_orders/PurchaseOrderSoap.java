@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2024.10.25 a las 10:15:26 PM ART 
+// Generado el: 2024.10.26 a las 06:19:57 PM ART 
 //
 
 
@@ -10,11 +10,9 @@ package soap.purchase_orders;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -31,8 +29,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="idPurchaseOrder" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="observations" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="requestDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;element name="receiptDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="requestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="receiptDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="storeCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="items" type="{http://soap/purchase_orders}OrderItemSoap" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -60,10 +58,8 @@ public class PurchaseOrderSoap {
     protected String state;
     protected String observations;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar requestDate;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar receiptDate;
+    protected String requestDate;
+    protected String receiptDate;
     @XmlElement(required = true)
     protected String storeCode;
     protected List<OrderItemSoap> items;
@@ -137,10 +133,10 @@ public class PurchaseOrderSoap {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRequestDate() {
+    public String getRequestDate() {
         return requestDate;
     }
 
@@ -149,10 +145,10 @@ public class PurchaseOrderSoap {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setRequestDate(XMLGregorianCalendar value) {
+    public void setRequestDate(String value) {
         this.requestDate = value;
     }
 
@@ -161,10 +157,10 @@ public class PurchaseOrderSoap {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReceiptDate() {
+    public String getReceiptDate() {
         return receiptDate;
     }
 
@@ -173,10 +169,10 @@ public class PurchaseOrderSoap {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setReceiptDate(XMLGregorianCalendar value) {
+    public void setReceiptDate(String value) {
         this.receiptDate = value;
     }
 

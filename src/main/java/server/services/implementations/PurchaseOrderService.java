@@ -114,11 +114,6 @@ public class PurchaseOrderService implements IPurchaseOrderService {
 	    
 	    log.info("[PurchaseOrderService][searchOrders] Orders found: {}", orders.size());
 	  
-	    System.err.println("PRODUCT = "+productCode);
-	    System.err.println("STARTREQ = "+startRequestDate); // FIX en cliente
-	    System.err.println("ENDREQ = "+endRequestDate); // FIX EN cliente
-	    System.err.println("STATE = "+state);
-	    System.err.println("CODESTORE = "+codeStore);
         return orders;
     }
 }

@@ -7,8 +7,8 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="productCode" type="xs:string" minOccurs="0"/>
-                <xs:element name="startRequestDate" type="xs:dateTime" minOccurs="0"/>
-                <xs:element name="endRequestDate" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="startRequestDate" type="xs:string" minOccurs="0"/>  <!-- Cambiado a xs:string -->
+                <xs:element name="endRequestDate" type="xs:string" minOccurs="0"/>    <!-- Cambiado a xs:string -->
                 <xs:element name="status" type="xs:string" minOccurs="0"/>
                 <xs:element name="storeCode" type="xs:string" minOccurs="0"/>
             </xs:sequence>
@@ -29,8 +29,8 @@
             <xs:element name="idPurchaseOrder" type="xs:int"/>
             <xs:element name="state" type="xs:string"/>
             <xs:element name="observations" type="xs:string" minOccurs="0"/>
-            <xs:element name="requestDate" type="xs:dateTime"/>
-            <xs:element name="receiptDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="requestDate" type="xs:string"/>  <!-- Cambiado a xs:string -->
+            <xs:element name="receiptDate" type="xs:string" minOccurs="0"/>  <!-- Cambiado a xs:string -->
             <xs:element name="storeCode" type="xs:string"/>
             <!-- Lista de OrderItem -->
             <xs:element name="items" minOccurs="0" maxOccurs="unbounded" type="tns:OrderItemSoap"/>
