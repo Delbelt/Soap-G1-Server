@@ -96,6 +96,7 @@ public class PurchaseOrderEndpoint {
             response.getPurchaseOrders().add(orderSoap);
         }
 
+        System.err.println(response);
         return response;
     }
         

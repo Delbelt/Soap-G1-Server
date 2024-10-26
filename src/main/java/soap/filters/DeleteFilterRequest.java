@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +35,27 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userId"
+    "id"
 })
-@XmlRootElement(name = "getFiltersRequest")
-public class GetFiltersRequest {
+@XmlRootElement(name = "deleteFilterRequest")
+public class DeleteFilterRequest {
 
-    protected int userId;
+    protected int id;
 
     /**
-     * Obtiene el valor de la propiedad userId.
+     * Obtiene el valor de la propiedad id.
      * 
      */
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
     /**
-     * Define el valor de la propiedad userId.
+     * Define el valor de la propiedad id.
      * 
      */
-    public void setUserId(int value) {
-        this.userId = value;
+    public void setId(int value) {
+        this.id = value;
     }
 
 }

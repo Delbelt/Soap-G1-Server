@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2024.10.25 a las 06:59:20 PM ART 
+// Generado el: 2024.10.25 a las 10:15:26 PM ART 
 //
 
 
@@ -58,6 +58,70 @@ public class ObjectFactory {
      */
     public FilterSoap createFilterSoap() {
         return new FilterSoap();
+    }
+
+    /**
+     * Create an instance of {@link SaveFilterRequest }
+     * 
+     */
+    public SaveFilterRequest createSaveFilterRequest() {
+        return new SaveFilterRequest();
+    }
+
+    /**
+     * Create an instance of {@link SaveFilterType }
+     * 
+     */
+    public SaveFilterType createSaveFilterType() {
+        return new SaveFilterType();
+    }
+
+    /**
+     * Create an instance of {@link SaveFilterResponse }
+     * 
+     */
+    public SaveFilterResponse createSaveFilterResponse() {
+        return new SaveFilterResponse();
+    }
+
+    /**
+     * Create an instance of {@link EditFilterRequest }
+     * 
+     */
+    public EditFilterRequest createEditFilterRequest() {
+        return new EditFilterRequest();
+    }
+
+    /**
+     * Create an instance of {@link EditFilterType }
+     * 
+     */
+    public EditFilterType createEditFilterType() {
+        return new EditFilterType();
+    }
+
+    /**
+     * Create an instance of {@link EditFilterResponse }
+     * 
+     */
+    public EditFilterResponse createEditFilterResponse() {
+        return new EditFilterResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteFilterRequest }
+     * 
+     */
+    public DeleteFilterRequest createDeleteFilterRequest() {
+        return new DeleteFilterRequest();
+    }
+
+    /**
+     * Create an instance of {@link DeleteFilterResponse }
+     * 
+     */
+    public DeleteFilterResponse createDeleteFilterResponse() {
+        return new DeleteFilterResponse();
     }
 
 }

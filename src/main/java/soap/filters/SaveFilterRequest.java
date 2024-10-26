@@ -10,6 +10,7 @@ package soap.filters;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="filter" type="{http://soap/filters}SaveFilterType"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userId"
+    "filter"
 })
-@XmlRootElement(name = "getFiltersRequest")
-public class GetFiltersRequest {
+@XmlRootElement(name = "saveFilterRequest")
+public class SaveFilterRequest {
 
-    protected int userId;
+    @XmlElement(required = true)
+    protected SaveFilterType filter;
 
     /**
-     * Obtiene el valor de la propiedad userId.
+     * Obtiene el valor de la propiedad filter.
      * 
+     * @return
+     *     possible object is
+     *     {@link SaveFilterType }
+     *     
      */
-    public int getUserId() {
-        return userId;
+    public SaveFilterType getFilter() {
+        return filter;
     }
 
     /**
-     * Define el valor de la propiedad userId.
+     * Define el valor de la propiedad filter.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link SaveFilterType }
+     *     
      */
-    public void setUserId(int value) {
-        this.userId = value;
+    public void setFilter(SaveFilterType value) {
+        this.filter = value;
     }
 
 }

@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="success" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +35,27 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userId"
+    "success"
 })
-@XmlRootElement(name = "getFiltersRequest")
-public class GetFiltersRequest {
+@XmlRootElement(name = "deleteFilterResponse")
+public class DeleteFilterResponse {
 
-    protected int userId;
+    protected boolean success;
 
     /**
-     * Obtiene el valor de la propiedad userId.
+     * Obtiene el valor de la propiedad success.
      * 
      */
-    public int getUserId() {
-        return userId;
+    public boolean isSuccess() {
+        return success;
     }
 
     /**
-     * Define el valor de la propiedad userId.
+     * Define el valor de la propiedad success.
      * 
      */
-    public void setUserId(int value) {
-        this.userId = value;
+    public void setSuccess(boolean value) {
+        this.success = value;
     }
 
 }

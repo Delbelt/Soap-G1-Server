@@ -17,16 +17,16 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para FilterSoap complex type.
+ * <p>Clase Java para SaveFilterType complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="FilterSoap"&gt;
+ * &lt;complexType name="SaveFilterType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="productCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="startRequestDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
@@ -44,8 +44,8 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FilterSoap", propOrder = {
-    "id",
+@XmlType(name = "SaveFilterType", propOrder = {
+    "userId",
     "name",
     "productCode",
     "startRequestDate",
@@ -55,9 +55,9 @@ import jakarta.xml.bind.annotation.XmlType;
     "status",
     "store"
 })
-public class FilterSoap {
+public class SaveFilterType {
 
-    protected int id;
+    protected int userId;
     @XmlElement(required = true)
     protected String name;
     protected String productCode;
@@ -73,19 +73,19 @@ public class FilterSoap {
     protected String store;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Obtiene el valor de la propiedad userId.
      * 
      */
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Define el valor de la propiedad userId.
      * 
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setUserId(int value) {
+        this.userId = value;
     }
 
     /**

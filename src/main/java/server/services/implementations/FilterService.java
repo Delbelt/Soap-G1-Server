@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.slf4j.Slf4j;
 import server.entities.Filter;
+import server.entities.User;
 import server.repositories.IFilterRepository;
 import server.services.IFilterService;
 
@@ -17,6 +18,8 @@ import server.services.IFilterService;
 public class FilterService implements IFilterService {
 	@Autowired
     private IFilterRepository filterRepository;
+	@Autowired
+    private UserService userService;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -32,4 +35,50 @@ public class FilterService implements IFilterService {
 		
         return filters;
     }
+	
+	@Transactional
+	public Filter saveFilter(Filter filter, int userId) {
+		User user = userService.findById(userId);
+		
+		if (user == null) {
+			throw new NoSuchElementException("User with id " + userId + " not found");
+		}
+		
+		filter.setUser(user);
+	    log.info("[FilterService][saveFilter]: Saving filter - " + filter);
+	    return filterRepository.save(filter);
+	}
+	
+	@Transactional
+	public Filter editFilter(Filter filter) {
+	    // Busca el filtro existente
+	    Filter existingFilter = filterRepository.findById(filter.getId())
+	            .orElseThrow(() -> new NoSuchElementException("Filter with id " + filter.getId() + " not found"));
+
+	    // Actualiza los campos necesarios
+	    existingFilter.setName(filter.getName());
+	    existingFilter.setProductCode(filter.getProductCode());
+	    existingFilter.setStartRequestDate(filter.getStartRequestDate());
+	    existingFilter.setEndRequestDate(filter.getEndRequestDate());
+	    existingFilter.setStartReceiptDate(filter.getStartReceiptDate());
+	    existingFilter.setEndReceiptDate(filter.getEndReceiptDate());
+	    existingFilter.setStatus(filter.getStatus());
+	    existingFilter.setStore(filter.getStore());
+
+	    log.info("[FilterService][editFilter]: Editing filter - " + existingFilter);
+	    return filterRepository.save(existingFilter);
+	}
+
+	@Transactional
+	public boolean deleteFilter(int filterId) {
+	    if (!filterRepository.existsById(filterId)) {
+	        throw new NoSuchElementException("Filter with id " + filterId + " not found");
+	    }
+
+	    filterRepository.deleteById(filterId);
+	    log.info("[FilterService][deleteFilter]: Deleted filter with id - " + filterId);
+	    return true; // Retorna true si la eliminación fue exitosa
+	}
+
+
 }
