@@ -6,11 +6,10 @@
 //
 
 
-package soap.countries;
+package soap.catalogs;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="country" type="{http://soap/countries}Country"/&gt;
+ *         &lt;element name="catalog" type="{http://soap/catalogs}SoapCatalog" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +35,35 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "country"
+    "catalog"
 })
-@XmlRootElement(name = "GetCountryResponse")
-public class GetCountryResponse {
+@XmlRootElement(name = "AddProductToCatalogResponse")
+public class AddProductToCatalogResponse {
 
-    @XmlElement(required = true)
-    protected Country country;
+    protected SoapCatalog catalog;
 
     /**
-     * Obtiene el valor de la propiedad country.
+     * Obtiene el valor de la propiedad catalog.
      * 
      * @return
      *     possible object is
-     *     {@link Country }
+     *     {@link SoapCatalog }
      *     
      */
-    public Country getCountry() {
-        return country;
+    public SoapCatalog getCatalog() {
+        return catalog;
     }
 
     /**
-     * Define el valor de la propiedad country.
+     * Define el valor de la propiedad catalog.
      * 
      * @param value
      *     allowed object is
-     *     {@link Country }
+     *     {@link SoapCatalog }
      *     
      */
-    public void setCountry(Country value) {
-        this.country = value;
+    public void setCatalog(SoapCatalog value) {
+        this.catalog = value;
     }
 
 }

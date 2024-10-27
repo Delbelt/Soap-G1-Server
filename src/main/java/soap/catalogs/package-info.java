@@ -5,5 +5,5 @@
 // Generado el: 2024.10.26 a las 11:43:56 PM ART 
 //
 
-@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://soap/countries", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package soap.countries;
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://soap/catalogs", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package soap.catalogs;

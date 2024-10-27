@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://soap/catalogs"
+           xmlns="http://soap/catalogs"
+           elementFormDefault="qualified">
+
+    <!-- Solicitud para crear un catálogo -->
+    <xs:element name="CreateCatalogRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Respuesta para crear un catálogo -->
+    <xs:element name="CreateCatalogResponse">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="catalog" type="SoapCatalog" />
+                
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Solicitud para eliminar un catálogo -->
+    <xs:element name="DeleteCatalogRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="catalogId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Respuesta para eliminar un catálogo -->
+    <xs:element name="DeleteCatalogResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Solicitud para agregar un producto a un catálogo -->
+    <xs:element name="AddProductToCatalogRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="catalogId" type="xs:long"/>
+                <xs:element name="productCode" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Respuesta para agregar un producto a un catálogo -->
+    <xs:element name="AddProductToCatalogResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="catalog" type="SoapCatalog" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Solicitud para exportar un catálogo a PDF -->
+    <xs:element name="ExportCatalogToPdfRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="catalogId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Respuesta para exportar un catálogo a PDF -->
+    <xs:element name="ExportCatalogToPdfResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="pdfUrl" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	
+	<!-- Solicitud para obtener un catálogo por ID -->
+	<xs:element name="GetCatalogByIdRequest">
+	    <xs:complexType>
+	        <xs:sequence>
+	            <xs:element name="catalogId" type="xs:long"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	</xs:element>
+	
+	<!-- Respuesta para obtener un catálogo por ID -->
+	<xs:element name="GetCatalogByIdResponse">
+	    <xs:complexType>
+	        <xs:sequence>
+	            <xs:element name="catalog" type="SoapCatalog" minOccurs="0" />
+	        </xs:sequence>
+	    </xs:complexType>
+	</xs:element>
+	
+	
+    <!-- Definición del catálogo en SOAP -->
+    <xs:complexType name="SoapCatalog">
+        <xs:sequence>
+        
+        	<xs:element name="id" type="xs:long" />
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="products" type="SoapProduct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definición de producto en SOAP -->
+    <xs:complexType name="SoapProduct">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="size" type="xs:string"/>
+            <xs:element name="color" type="xs:string"/>
+            <xs:element name="active" type="xs:boolean"/>
+            <xs:element name="photo" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+   
+</xs:schema>

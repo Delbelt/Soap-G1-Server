@@ -6,8 +6,10 @@
 //
 
 
-package soap.countries;
+package soap.catalogs;
 
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -15,18 +17,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Country complex type.
+ * <p>Clase Java para SoapCatalog complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="Country"&gt;
+ * &lt;complexType name="SoapCatalog"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="population" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="capital" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="products" type="{http://soap/catalogs}SoapProduct" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,18 +38,33 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Country", propOrder = {
+@XmlType(name = "SoapCatalog", propOrder = {
+    "id",
     "name",
-    "population",
-    "capital"
+    "products"
 })
-public class Country {
+public class SoapCatalog {
 
+    protected long id;
     @XmlElement(required = true)
     protected String name;
-    protected int population;
-    @XmlElement(required = true)
-    protected String capital;
+    protected List<SoapProduct> products;
+
+    /**
+     * Obtiene el valor de la propiedad id.
+     * 
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Define el valor de la propiedad id.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
+    }
 
     /**
      * Obtiene el valor de la propiedad name.
@@ -74,43 +91,32 @@ public class Country {
     }
 
     /**
-     * Obtiene el valor de la propiedad population.
+     * Gets the value of the products property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the products property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getProducts().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SoapProduct }
+     * 
      * 
      */
-    public int getPopulation() {
-        return population;
-    }
-
-    /**
-     * Define el valor de la propiedad population.
-     * 
-     */
-    public void setPopulation(int value) {
-        this.population = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad capital.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCapital() {
-        return capital;
-    }
-
-    /**
-     * Define el valor de la propiedad capital.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCapital(String value) {
-        this.capital = value;
+    public List<SoapProduct> getProducts() {
+        if (products == null) {
+            products = new ArrayList<SoapProduct>();
+        }
+        return this.products;
     }
 
 }
