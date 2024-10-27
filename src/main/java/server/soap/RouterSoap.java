@@ -16,5 +16,8 @@ public class RouterSoap {
 	// FILTER
 	public final static String NAMESPACE_FILTER = "http://soap/filters";
 	public final static String RESOURCE_FILTER = "xsd/filters.xsd";
-
+	
+	//USERS
+	public final static String NAMESPACE_USER = "http://soap/users";
+	public final static String RESOURCE_USER = "xsd/users.xsd";
 }
