@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.10.25 a las 08:59:55 PM ART 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://soap/countries">
+    <schemaBindings map="false">
+      <package name="soap.countries"/>
+    </schemaBindings>
+    <bindings scd="tns:GetCountryRequest">
+      <class ref="soap.countries.GetCountryRequest"/>
+    </bindings>
+    <bindings scd="tns:GetCountryResponse">
+      <class ref="soap.countries.GetCountryResponse"/>
+    </bindings>
+    <bindings scd="~tns:Country">
+      <class ref="soap.countries.Country"/>
+    </bindings>
+  </bindings>
+</bindings>
+

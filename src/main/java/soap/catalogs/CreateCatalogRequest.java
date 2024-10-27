@@ -6,7 +6,7 @@
 //
 
 
-package soap.countries;
+package soap.catalogs;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="country" type="{http://soap/countries}Country"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "country"
+    "name"
 })
-@XmlRootElement(name = "GetCountryResponse")
-public class GetCountryResponse {
+@XmlRootElement(name = "CreateCatalogRequest")
+public class CreateCatalogRequest {
 
     @XmlElement(required = true)
-    protected Country country;
+    protected String name;
 
     /**
-     * Obtiene el valor de la propiedad country.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
-     *     {@link Country }
+     *     {@link String }
      *     
      */
-    public Country getCountry() {
-        return country;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Define el valor de la propiedad country.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
-     *     {@link Country }
+     *     {@link String }
      *     
      */
-    public void setCountry(Country value) {
-        this.country = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }

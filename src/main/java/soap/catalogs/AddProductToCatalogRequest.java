@@ -6,7 +6,7 @@
 //
 
 
-package soap.countries;
+package soap.catalogs;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="country" type="{http://soap/countries}Country"/&gt;
+ *         &lt;element name="catalogId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="productCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +37,54 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "country"
+    "catalogId",
+    "productCode"
 })
-@XmlRootElement(name = "GetCountryResponse")
-public class GetCountryResponse {
+@XmlRootElement(name = "AddProductToCatalogRequest")
+public class AddProductToCatalogRequest {
 
+    protected long catalogId;
     @XmlElement(required = true)
-    protected Country country;
+    protected String productCode;
 
     /**
-     * Obtiene el valor de la propiedad country.
+     * Obtiene el valor de la propiedad catalogId.
      * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
      */
-    public Country getCountry() {
-        return country;
+    public long getCatalogId() {
+        return catalogId;
     }
 
     /**
-     * Define el valor de la propiedad country.
+     * Define el valor de la propiedad catalogId.
+     * 
+     */
+    public void setCatalogId(long value) {
+        this.catalogId = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad productCode.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getProductCode() {
+        return productCode;
+    }
+
+    /**
+     * Define el valor de la propiedad productCode.
      * 
      * @param value
      *     allowed object is
-     *     {@link Country }
+     *     {@link String }
      *     
      */
-    public void setCountry(Country value) {
-        this.country = value;
+    public void setProductCode(String value) {
+        this.productCode = value;
     }
 
 }

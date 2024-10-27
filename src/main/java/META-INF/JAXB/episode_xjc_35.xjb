@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.10.26 a las 10:08:11 PM ART 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://soap/catalogs">
+    <schemaBindings map="false">
+      <package name="soap.catalogs"/>
+    </schemaBindings>
+    <bindings scd="tns:CreateCatalogRequest">
+      <class ref="soap.catalogs.CreateCatalogRequest"/>
+    </bindings>
+    <bindings scd="tns:CreateCatalogResponse">
+      <class ref="soap.catalogs.CreateCatalogResponse"/>
+    </bindings>
+    <bindings scd="~tns:SoapCatalog">
+      <class ref="soap.catalogs.SoapCatalog"/>
+    </bindings>
+    <bindings scd="tns:DeleteCatalogRequest">
+      <class ref="soap.catalogs.DeleteCatalogRequest"/>
+    </bindings>
+    <bindings scd="tns:DeleteCatalogResponse">
+      <class ref="soap.catalogs.DeleteCatalogResponse"/>
+    </bindings>
+    <bindings scd="tns:AddProductToCatalogRequest">
+      <class ref="soap.catalogs.AddProductToCatalogRequest"/>
+    </bindings>
+    <bindings scd="tns:AddProductToCatalogResponse">
+      <class ref="soap.catalogs.AddProductToCatalogResponse"/>
+    </bindings>
+    <bindings scd="tns:ExportCatalogToPdfRequest">
+      <class ref="soap.catalogs.ExportCatalogToPdfRequest"/>
+    </bindings>
+    <bindings scd="tns:ExportCatalogToPdfResponse">
+      <class ref="soap.catalogs.ExportCatalogToPdfResponse"/>
+    </bindings>
+    <bindings scd="tns:GetAllCatalogsRequest">
+      <class ref="soap.catalogs.GetAllCatalogsRequest"/>
+    </bindings>
+    <bindings scd="tns:GetAllCatalogsResponse">
+      <class ref="soap.catalogs.GetAllCatalogsResponse"/>
+    </bindings>
+    <bindings scd="tns:GetCatalogByIdRequest">
+      <class ref="soap.catalogs.GetCatalogByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:GetCatalogByIdResponse">
+      <class ref="soap.catalogs.GetCatalogByIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:SoapProduct">
+      <class ref="soap.catalogs.SoapProduct"/>
+    </bindings>
+  </bindings>
+  <bindings scd="x-schema::tns" xmlns:tns="http://soap/countries">
+    <schemaBindings map="false">
+      <package name="soap.countries"/>
+    </schemaBindings>
+    <bindings scd="tns:GetCountryRequest">
+      <class ref="soap.countries.GetCountryRequest"/>
+    </bindings>
+    <bindings scd="tns:GetCountryResponse">
+      <class ref="soap.countries.GetCountryResponse"/>
+    </bindings>
+    <bindings scd="~tns:Country">
+      <class ref="soap.countries.Country"/>
+    </bindings>
+  </bindings>
+</bindings>
+
