@@ -39,5 +39,7 @@ public class User {
 	@Column(name="active", nullable=false)
 	private boolean active;
 	
-
+	 @ManyToOne
+	    @JoinColumn(name = "store_code")
+	    private Store store;
 }
